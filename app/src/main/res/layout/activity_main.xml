@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable name="model" type="com.omarsalinas.databinding.models.MainViewModel"/>
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".views.MainActivity">
+
+        <EditText
+            android:text="@={model.password}"
+            android:hint="@string/main_password_et_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:minWidth="200dp"/>
+
+        <TextView
+            android:text="@{model.getPasswordQuality}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:text="@string/main_reveal_password_btn_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> model.revealPassword()}"/>
+
+        <TextView
+            android:text="@{model.getCurrentPassword}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{model.passwordRevealed}"/>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DataBinding</string>
+    <string name="main_password_et_hint">Password</string>
+    <string name="main_reveal_password_btn_text">Reveal password</string>
+</resources>
